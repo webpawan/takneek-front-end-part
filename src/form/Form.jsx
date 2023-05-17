@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 
-const Auth = () => {
+const Form = () => {
 
   const [name, setName] = useState();
   const [email, setEmail] = useState();
@@ -25,9 +25,9 @@ const Auth = () => {
       const { data } = await toast.promise(
         axios.post(`/api/user/signup`, { name, email, password }),
         {
-          pending: "registration in process",
-          success: "registration is completed",
-          error: "try with different email'id ",
+          pending: "please wait",
+          success: "completed",
+          error: "error from server ",
         }
       );
 
@@ -137,4 +137,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default Form;
